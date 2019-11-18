@@ -8,9 +8,9 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * Animal calls are repeated in reverse order
+ * After the new animal call, repeat older animal calls in order
  */
-public class AllInReverse extends RepeatStrategy {
+public class InOrder extends RepeatStrategy {
 
     Deque<Animal> previousAnimals = new ArrayDeque<>();
 
@@ -32,7 +32,7 @@ public class AllInReverse extends RepeatStrategy {
             }
         }
 
-        previousAnimals.addFirst(animal);
+        previousAnimals.addLast(animal);
 
         return sb.toString();
     }

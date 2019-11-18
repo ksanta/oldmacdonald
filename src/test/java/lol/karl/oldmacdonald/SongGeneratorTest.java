@@ -1,8 +1,8 @@
 package lol.karl.oldmacdonald;
 
-import lol.karl.oldmacdonald.chants.AllInReverse;
+import lol.karl.oldmacdonald.chants.ReverseOrder;
 import lol.karl.oldmacdonald.chants.NoRepeat;
-import lol.karl.oldmacdonald.chants.PreviousInOrder;
+import lol.karl.oldmacdonald.chants.InOrder;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ public class SongGeneratorTest {
                 new Animal("mouse", "squeek"),
                 new Animal("cat", "meow"),
                 new Animal("cow", "moo"));
-        String lyrics = generator.generateLyrics(animals, true, new AllInReverse());
+        String lyrics = generator.generateLyrics(animals, true, new ReverseOrder());
         log.info(lyrics);
     }
 
@@ -41,7 +41,7 @@ public class SongGeneratorTest {
                 new Animal("mouse", "squeek"),
                 new Animal("cat", "meow"),
                 new Animal("cow", "moo"));
-        String lyrics = generator.generateLyrics(animals, true, new PreviousInOrder());
+        String lyrics = generator.generateLyrics(animals, true, new InOrder());
         log.info(lyrics);
     }
 
@@ -52,7 +52,7 @@ public class SongGeneratorTest {
                 new Animal("mouse", "squeek"),
                 new Animal("cat", "meow"),
                 new Animal("cow", "moo"));
-        String lyrics = generator.generateLyrics(animals, false, new PreviousInOrder());
+        String lyrics = generator.generateLyrics(animals, false, new InOrder());
         log.info(lyrics);
     }
 }
